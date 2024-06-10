@@ -1,12 +1,9 @@
 <?php
 
-    require_once("conector.php");
-    session_start();
+require_once("conector.php");
 
-    if (isset($_SESSION['user_id'])) {
-        header("Location: index.php");
-        exit();
-    }
+session_start();
+
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $email = $password = "";

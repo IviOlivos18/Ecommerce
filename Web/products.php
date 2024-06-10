@@ -1,12 +1,13 @@
 <?php
 
-    require_once("conector.php");
-    session_start();
+require_once("conector.php");
 
-    if (!isset($_SESSION['user_id'])) {
-        header("Location: login.php");
-        exit();
-    }
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 
 ?>
 
