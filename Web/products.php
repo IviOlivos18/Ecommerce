@@ -34,13 +34,22 @@
             <section class="products">
                 <h2>Productos</h2>
                 <ul>
-                    <?php foreach ($productos as $producto): ?>
-                        <li>
-                            <h3><?php echo $producto['nombre']; ?></h3>
-                            <p><?php echo $producto['descripcion']; ?></p>
-                            <p>Precio: <?php echo $producto['precio']; ?></p>
-                        </li>
-                    <?php endforeach; ?>
+                    <?php
+                        $sql = "select * from productos";
+                        $result = $mysqli->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()){
+                                echo "<li>";
+                                echo "<h3>".htmlspecialchars($row['Nombre'])."</h3>";
+                                echo "<p>".htmlspecialchars($row['Descripcion'])."</p>";
+                                echo "<p>".htmlspecialchars($row['Inventario'])."</p>";
+                                echo "<p>".htmlspecialchars($row['Precio'])."</p>";
+                            }
+                        }else{
+                            echo "<h3>no existen productos en la base de datos</h3>";
+                        }
+                        $mysqli->close();
+                    ?>
                 </ul>
             </section>
         </section>

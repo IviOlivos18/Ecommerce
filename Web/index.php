@@ -21,7 +21,7 @@
     <header>
         <a href="index.php">Inicio</a>
         <a href="products.php">Productos</a>
-        <a href="login.php">Iniciar Sesión</a>
+        <a href="login.php" <?php session_destroy(); ?>>Iniciar Sesión</a>
         <a href="register.php">Registrarse</a>
         <a href="cart.php">Carrito</a>
     </header>
@@ -31,7 +31,7 @@
             <img src="./images/carrito-de-compras.png" alt="" srcset="" width="250px" height="250px">
             <h1>Bienvenido a Nuestra Tienda <?php echo "".$_SESSION['user_name']; ?></h1>
             <p>Explora nuestros productos</p>
-            <a href="products.html" class="btn">Ver Productos</a>
+            <a href="products.php" class="btn">Ver Productos</a>
         </section>
 
     </main>
