@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-06-2024 a las 05:24:34
+-- Tiempo de generación: 10-06-2024 a las 06:25:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ecommerce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `ID` int(10) NOT NULL,
+  `Nombre` varchar(50) NOT NULL,
+  `Inventario` int(10) NOT NULL,
+  `Precio` double NOT NULL,
+  `Descripcion` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`ID`, `Nombre`, `Inventario`, `Precio`, `Descripcion`) VALUES
+(1, 'Jabon', 100, 18, 'Jabon Neutro'),
+(2, 'Pasta', 100, 14, 'Pasta de dientes');
 
 -- --------------------------------------------------------
 
@@ -46,6 +68,12 @@ INSERT INTO `usuarios` (`ID`, `User`, `Email`, `Password`) VALUES
 --
 
 --
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -54,6 +82,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
