@@ -1,3 +1,50 @@
+<?php
+
+    require_once("conector.php");
+    session_start();
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $email = $password = "";
+
+        if(empty($_POST['email']) || empty($_POST['password'])){
+            echo "Por favor ingresa todos los campos";
+        }else{
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            $sql = "select * from usuarios where email = ?";
+            $stmt = $mysqli->prepare($sql);
+
+            if ($stmt) {
+                $stmt->bind_param("s", $email);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+
+                    if (password_verify($password, $row['Password'])) {
+                        $_SESSION['user_id'] = $row['ID'];
+                        $_SESSION['user_name'] = $row['User'];
+                        header("Location: index.php");
+                        exit();
+                    } else {
+                        echo "Contraseña incorrecta.";
+                    }
+                } else {
+                    echo "No se encontró una cuenta con ese email.";
+                }
+                $stmt->close();
+            } else {
+                echo "Error en la consulta a la base de datos.";
+            }
+
+            $mysqli->close();
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +65,7 @@
     <main>
         <section class="login-form">
             <h2>Iniciar Sesión</h2>
-            <form action="login-process.php" method="POST">
+            <form action="login.php" method="POST">
                 <label for="email">Correo Electrónico:</label>
                 <input type="email" id="email" name="email" required>
                 

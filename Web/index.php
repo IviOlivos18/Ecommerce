@@ -1,29 +1,12 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "olivos.ivi18";
-    $dbname = "ecommerce";
+    require_once("conector.php");
 
-    // Crear conexión
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    session_start();
 
-    // Verificar conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php");
+        exit();
     }
-
-    $sql = "SELECT * FROM productos";
-    $result = $conn->query($sql);
-
-    $productos = array();
-
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            $productos[] = $row;
-        }
-    }
-
-    $conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +29,7 @@
     <main>
         <section class="hero">
             <img src="./images/carrito-de-compras.png" alt="" srcset="" width="250px" height="250px">
-            <h1>Bienvenido a Nuestra Tienda</h1>
+            <h1>Bienvenido a Nuestra Tienda <?php echo "".$_SESSION['user_name']; ?></h1>
             <p>Explora nuestros productos</p>
             <a href="products.html" class="btn">Ver Productos</a>
         </section>
