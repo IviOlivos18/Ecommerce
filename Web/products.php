@@ -2,6 +2,8 @@
 
     require_once("conector.php");
 
+    session_start();
+
 ?>
 
 
@@ -16,10 +18,11 @@
 <body>
 
     <header>
-        <a href="index.html">Inicio</a>
+        <a href="index.php">Inicio</a>
         <a href="products.php">Productos</a>
         <a href="login.php">Iniciar Sesión</a>
         <a href="register.php">Registrarse</a>
+        <a href="cerrarsesion.php">Cerrar sesion</a>
         <a href="cart.php">Carrito</a>
     </header>
 
@@ -34,6 +37,7 @@
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()){
                                 echo "<li class='product'>";
+                                // modificar jfif
                                 echo "<img src='./images/".htmlspecialchars($row['Nombre']).".jfif' name='".htmlspecialchars($row['Nombre'])."'>";
                                 echo "<h3>Nombre: ".htmlspecialchars($row['Nombre'])."</h3>";
                                 echo "<p>Descripcion: ".htmlspecialchars($row['Descripcion'])."</p>";

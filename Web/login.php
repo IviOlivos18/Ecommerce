@@ -1,7 +1,7 @@
 <?php
 
     require_once("conector.php");
-
+    session_start();
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $email = $password = "";
@@ -55,11 +55,12 @@
 </head>
 <body>
     <header>
-        <a href="index.html">Inicio</a>
+        <a href="index.php">Inicio</a>
         <a href="products.php">Productos</a>
         <a href="login.php">Iniciar Sesión</a>
         <a href="register.php">Registrarse</a>
-        <a href="cart.php`">Carrito</a>
+        <a href="cerrarsesion.php">Cerrar sesion</a>
+        <a href="cart.php">Carrito</a>
     </header>
 
     <main>
