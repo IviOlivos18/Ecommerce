@@ -1,13 +1,13 @@
-<?php
+<!-- <?php
     require_once("conector.php");
 
     session_start();
 
     if (!isset($_SESSION['user_id'])) {
-        header("Location: login.php");
+        header("Location: index.php");
         exit();
     }
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="es">
@@ -19,9 +19,9 @@
 </head>
 <body>
     <header>
-        <a href="index.php">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="products.php">Productos</a>
-        <a href="login.php" <?php session_destroy(); ?>>Iniciar Sesión</a>
+        <a href="login.php" <?php session_destroy(); ?>Iniciar Sesión</a>
         <a href="register.php">Registrarse</a>
         <a href="cart.php">Carrito</a>
     </header>

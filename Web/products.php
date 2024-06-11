@@ -23,7 +23,7 @@ if (isset($_SESSION['user_id'])) {
 <body>
 
     <header>
-        <a href="index.php">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="products.php">Productos</a>
         <a href="login.php">Iniciar Sesión</a>
         <a href="register.php">Registrarse</a>
@@ -41,10 +41,12 @@ if (isset($_SESSION['user_id'])) {
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()){
                                 echo "<li>";
-                                echo "<h3>".htmlspecialchars($row['Nombre'])."</h3>";
-                                echo "<p>".htmlspecialchars($row['Descripcion'])."</p>";
-                                echo "<p>".htmlspecialchars($row['Inventario'])."</p>";
-                                echo "<p>".htmlspecialchars($row['Precio'])."</p>";
+                                echo "<img src='./img/".htmlspecialchars($row['Imagen'])."' alt='".htmlspecialchars($row['Nombre'])."'>";
+                                echo "<h3>Nombre: ".htmlspecialchars($row['Nombre'])."</h3>";
+                                echo "<p>Descripcion: ".htmlspecialchars($row['Descripcion'])."</p>";
+                                echo "<p>Inventario:".htmlspecialchars($row['Inventario'])."</p>";
+                                echo "<p>Precio: ".htmlspecialchars($row['Precio'])."</p>";
+                                echo "</li>";
                             }
                         }else{
                             echo "<h3>no existen productos en la base de datos</h3>";

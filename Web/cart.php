@@ -9,12 +9,25 @@
 <body>
     
     <header>
-        <a href="index.php">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="products.php">Productos</a>
         <a href="login.php">Iniciar Sesión</a>
         <a href="register.php">Registrarse</a>
         <a href="cart.php">Carrito</a>
     </header>
+
+    <section class="elecciones">
+        <section class="producto-elegido">
+            <h1>Produtos elegidos:</h1>
+            <div class="producto">
+                <img src="ruta_de_tu_imagen.jpg" alt="Imagen del producto" class="producto-imagen">
+                <h4 class="producto-nombre">Nombre del Producto</h4>
+                <p class="producto-descripcion">Descripción del producto. Aquí puedes añadir detalles sobre las características y beneficios del producto.</p>
+                <span class="producto-precio">$99.99</span>
+            </div>
+            </section>
+    </section>
+
 
 </body>
 </html>

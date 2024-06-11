@@ -1,7 +1,7 @@
 <?php
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'olivos.ivi18');
 define('DB_NAME', 'ecommerce');
  
 /* Intentando conectarse a la base de datos */
