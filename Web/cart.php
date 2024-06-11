@@ -28,6 +28,10 @@
             </section>
     </section>
 
-
+    <footer>
+        <p>Todos los derechos reservados</p>
+        <p>2020</p>
+    </footer>
+    
 </body>
 </html>

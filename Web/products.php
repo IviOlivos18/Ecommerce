@@ -40,12 +40,13 @@ if (isset($_SESSION['user_id'])) {
                         $result = $mysqli->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()){
-                                echo "<li>";
+                                echo "<li class='product'>";
                                 echo "<img src='./img/".htmlspecialchars($row['Imagen'])."' alt='".htmlspecialchars($row['Nombre'])."'>";
                                 echo "<h3>Nombre: ".htmlspecialchars($row['Nombre'])."</h3>";
                                 echo "<p>Descripcion: ".htmlspecialchars($row['Descripcion'])."</p>";
                                 echo "<p>Inventario:".htmlspecialchars($row['Inventario'])."</p>";
                                 echo "<p>Precio: ".htmlspecialchars($row['Precio'])."</p>";
+                                echo "<a href='cart.php?id=".htmlspecialchars($row['ID'])."'>Agregar al carrito</a>";
                                 echo "</li>";
                             }
                         }else{
