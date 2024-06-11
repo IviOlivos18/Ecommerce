@@ -1,13 +1,6 @@
 <?php
 
-require_once("conector.php");
-
-session_start();
-
-if (isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
+    require_once("conector.php");
 
 ?>
 
@@ -41,7 +34,7 @@ if (isset($_SESSION['user_id'])) {
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()){
                                 echo "<li class='product'>";
-                                echo "<img src='./img/".htmlspecialchars($row['Imagen'])."' alt='".htmlspecialchars($row['Nombre'])."'>";
+                                echo "<img src='C:\xampp\htdocs\Ecommerce\Web\images\"".htmlspecialchars($row['Nombre']).".jfif' alt='".htmlspecialchars($row['Nombre'])."'>";
                                 echo "<h3>Nombre: ".htmlspecialchars($row['Nombre'])."</h3>";
                                 echo "<p>Descripcion: ".htmlspecialchars($row['Descripcion'])."</p>";
                                 echo "<p>Inventario:".htmlspecialchars($row['Inventario'])."</p>";

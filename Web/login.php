@@ -1,8 +1,6 @@
 <?php
 
-require_once("conector.php");
-
-session_start();
+    require_once("conector.php");
 
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
