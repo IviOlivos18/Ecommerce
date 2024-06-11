@@ -17,7 +17,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 <body>
     
@@ -39,7 +39,7 @@
                 <p class="producto-descripcion">Descripción del producto. Aquí puedes añadir detalles sobre las características y beneficios del producto.</p>
                 <span class="producto-precio">$99.99</span>
             </div>
-            </section>
+        </section>
     </section>
 
     <footer>
