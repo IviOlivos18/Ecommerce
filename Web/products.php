@@ -38,12 +38,18 @@
                             while ($row = $result->fetch_assoc()){
                                 echo "<li class='product'>";
                                 // modificar jfif
-                                echo "<img src='./images/".htmlspecialchars($row['Nombre']).".jfif' name='".htmlspecialchars($row['Nombre'])."'>";
+                                echo "<img src='./images/".htmlspecialchars($row['Nombre']).".jfif' width='200px' height='200px' name='".htmlspecialchars($row['Nombre'])."'>";
                                 echo "<h3>Nombre: ".htmlspecialchars($row['Nombre'])."</h3>";
                                 echo "<p>Descripcion: ".htmlspecialchars($row['Descripcion'])."</p>";
                                 echo "<p>Inventario:".htmlspecialchars($row['Inventario'])."</p>";
                                 echo "<p>Precio: ".htmlspecialchars($row['Precio'])."</p>";
-                                echo "<a href='cart.php?id=".htmlspecialchars($row['ID'])."'>Agregar al carrito</a>";
+                                echo "<form action='cart.php' method='POST'>";
+                                echo "<input type='hidden' name='nombre' value='".htmlspecialchars($row['Nombre'])."'>";
+                                echo "<input type='hidden' name='desc' value='".htmlspecialchars($row['Descripcion'])."'>";
+                                echo "<input type='hidden' name='precio' value='".htmlspecialchars($row['Precio'])."'>";
+                                echo "<input type='hidden' name='cantidad' value='1'>";
+                                echo "<button type='submit'>Agregar al carrito</button>";
+                                echo "</form>";
                                 echo "</li>";
                             }
                         }else{
@@ -58,7 +64,7 @@
 
     <footer>
         <p>Todos los derechos reservados</p>
-        <p>2020</p>
+        <p>2024</p>
     </footer>
 
     <script src="js/main.js"></script>

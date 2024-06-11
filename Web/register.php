@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <footer>
         <p>Todos los derechos reservados</p>
-        <p>2020</p>
+        <p>2024</p>
     </footer>
 
     <script src="js/main.js"></script>

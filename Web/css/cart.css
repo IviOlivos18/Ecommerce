@@ -40,4 +40,15 @@ a{
 .producto{
     display: flex;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+}
+.producto img{
+    width: 100px;
+    height: 100px;
+}
+.information{
+    left: 40px;
+    width: 100px;
 }
