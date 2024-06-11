@@ -40,7 +40,8 @@ main {
 }
 
 .hero img {
-    padding-right: 60px;
+    display: block;
+    padding-right: 100px;
 }
 
 .hero .btn {
