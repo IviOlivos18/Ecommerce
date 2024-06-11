@@ -40,7 +40,6 @@ main {
 }
 
 .hero img {
-    display: block;
     padding-right: 100px;
 }
 
@@ -106,7 +105,7 @@ main {
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
-    width: calc(33.333% - 2rem);
+    width: calc(90% - 1rem);
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 header a{
@@ -176,7 +175,6 @@ a{
 ul{
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas */
-    padding: 20px;
 }
 a{
     background-color: #007BFF;
@@ -191,4 +189,7 @@ a:hover {
 }
 a{
     text-decoration: none;
+}
+ul{
+    list-style: none;
 }
